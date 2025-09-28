@@ -1,3 +1,7 @@
+# Створити клас Contact з полями surname, name, age, mob_phone, email. Додати методи get_contact,
+# sent_message. Створити клас-нащадок UpdateContact з полями surname, name, age, mob_phone, email, 
+# job. Додати методи get_message. Створити екземпляри класів та дослідити стан об'єктів за допомогою 
+# атрибутів: __dict__, __base__, __bases__. Роздрукувати інформацію на екрані.
 class Contact:
     def __init__(self, surname: str, name: str, age: int, mob_phone: int, email: str):
         self.surname = surname
@@ -12,7 +16,10 @@ class Contact:
     def sent_message():
             pass
     
-class UpdateContact(Contact):
+class UpContact:
+     pass
+    
+class UpdateContact(Contact, UpContact):
       def __init__(self, surname: str, name: str, age: int, mob_phone: int, email: str, job: str):
         self.surname = surname
         self.name = name
@@ -28,11 +35,11 @@ class UpdateContact(Contact):
 first_contact = Contact("Jonson", "Jon", 16, 41241412124, "reprrr")
 second_contact = UpdateContact("Jonson", "Petro", 16, 41241412124, "reprrr", "agagga")
 
-print("0: ", first_contact.__dict__)
-print("1. ", Contact.__dict__)
-print("2. ", Contact.__base__)
-print("3. ", Contact.__bases__)
-print("4: ", second_contact.__dict__)
-print("5: ", UpdateContact.__dict__)
-print("6: ", UpdateContact.__base__)
-print("7: ", UpdateContact.__bases__)
+print("1: ", first_contact.__dict__)
+print("2. ", Contact.__dict__)
+print("3. ", Contact.__base__)
+print("4. ", Contact.__bases__)
+print("5: ", second_contact.__dict__)
+print("6: ", UpdateContact.__dict__)
+print("7: ", UpdateContact.__base__)
+print("8: ", UpdateContact.__bases__)

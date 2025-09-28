@@ -1,3 +1,6 @@
+# Використовуючи код завдання 2 надрукуйте у терміналі всі методи, які містяться у класі 
+# Contact та UpdateContact.
+import inspect
 class Contact:
     def __init__(self, surname: str, name: str, age: int, mob_phone: int, email: str):
         self.surname = surname
@@ -27,4 +30,12 @@ class UpdateContact(Contact):
 
 first_contact = Contact("Jonson", "Jon", 16, 41241412124, "reprrr")
 second_contact = UpdateContact("Jonson", "Petro", 16, 41241412124, "reprrr", "agagga")
+
+def print_methods(item):
+    for value in inspect.getmembers(item):
+        print(value)
 # ============================================
+
+print("\n1- ", dir(Contact))
+print("\n2- ", dir(UpdateContact))
+print_methods(UpdateContact)

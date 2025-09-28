@@ -1,3 +1,6 @@
+# Використовуючи код з завдання 2, створити 2 екземпляри обох класів. Використати функції
+# isinstance() – для перевірки екземплярів класу (за яким класом створені) та issubclass() – 
+# для перевірки і визначення класу-нащадка.
 class Contact:
     def __init__(self, surname: str, name: str, age: int, mob_phone: int, email: str):
         self.surname = surname
