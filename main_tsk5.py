@@ -15,10 +15,10 @@ class Contact:
     def sent_message():
             pass
     
-class UpContact:
-     pass
+    def __str__(self):
+         return f"{self.surname}, {self.name}, {self.age}, {self.mob_phone}, {self.email}"
     
-class UpdateContact(Contact, UpContact):
+class UpdateContact(Contact):
       def __init__(self, surname: str, name: str, age: int, mob_phone: int, email: str, job: str):
         self.surname = surname
         self.name = name
@@ -33,3 +33,15 @@ class UpdateContact(Contact, UpContact):
 
 first_contact = Contact("Jonson", "Jon", 16, 41241412124, "reprrr")
 second_contact = UpdateContact("Jonson", "Petro", 16, 41241412124, "reprrr", "agagga")
+# ============================================
+
+print("\n1: ", first_contact.__dict__)
+print("2. ", Contact.__dict__)
+print("3: ", second_contact.__dict__)
+print("4: ", UpdateContact.__dict__)
+# ============================================
+
+delattr(second_contact, "job")
+# delattr(UpdateContact, "job")
+print("5: ", second_contact.__dict__)
+print("6: ", first_contact)
